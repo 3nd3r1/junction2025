@@ -15,7 +15,7 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 const mockAssessments: Assessment[] = [
   {
     id: 'slack-001',
-    timestamp: '2024-11-14T10:30:00Z',
+    timestamp: '2025-11-14T10:30:00Z',
     cached: false,
     product: {
       name: 'Slack',
@@ -40,7 +40,7 @@ const mockAssessments: Assessment[] = [
         score: 82,
         summary: 'Well-established enterprise communication platform with strong security posture, acquired by Salesforce in 2021.',
         sources: [
-          { id: 'c1', type: 'independent', title: 'Gartner Magic Quadrant', verified: true, date: '2024-01' }
+          { id: 'c1', type: 'independent', title: 'Gartner Magic Quadrant', verified: true, date: '2025-01' }
         ]
       },
       securityTrackRecord: 'Good track record with no major breaches. Transparent security practices.',
@@ -101,18 +101,18 @@ const mockAssessments: Assessment[] = [
     vulnerabilities: {
       cveCount: 8,
       trendData: [
-        { month: '2024-01', count: 1 },
-        { month: '2024-02', count: 0 },
-        { month: '2024-03', count: 2 },
-        { month: '2024-04', count: 1 },
-        { month: '2024-05', count: 0 },
-        { month: '2024-06', count: 1 },
-        { month: '2024-07', count: 0 },
-        { month: '2024-08', count: 1 },
-        { month: '2024-09', count: 0 },
-        { month: '2024-10', count: 2 },
-        { month: '2024-11', count: 0 },
-        { month: '2024-12', count: 0 }
+        { month: '2025-01', count: 1 },
+        { month: '2025-02', count: 0 },
+        { month: '2025-03', count: 2 },
+        { month: '2025-04', count: 1 },
+        { month: '2025-05', count: 0 },
+        { month: '2025-06', count: 1 },
+        { month: '2025-07', count: 0 },
+        { month: '2025-08', count: 1 },
+        { month: '2025-09', count: 0 },
+        { month: '2025-10', count: 2 },
+        { month: '2025-11', count: 0 },
+        { month: '2025-12', count: 0 }
       ],
       severityBreakdown: {
         critical: 0,
@@ -122,19 +122,19 @@ const mockAssessments: Assessment[] = [
       },
       recentCVEs: [
         {
-          id: 'CVE-2024-23456',
+          id: 'CVE-2025-23456',
           cvss: 7.1,
           severity: 'High',
           description: 'XSS vulnerability in message rendering',
-          publishedDate: '2024-10-15',
+          publishedDate: '2025-10-15',
           patched: true
         },
         {
-          id: 'CVE-2024-12345',
+          id: 'CVE-2025-12345',
           cvss: 5.3,
           severity: 'Medium',
           description: 'Information disclosure in API responses',
-          publishedDate: '2024-10-01',
+          publishedDate: '2025-10-01',
           patched: true
         }
       ],
@@ -150,9 +150,9 @@ const mockAssessments: Assessment[] = [
       ],
       ltsVersions: ['4.x'],
       versionHistory: [
-        { version: '4.36.140', releaseDate: '2024-11-10', securityFixes: 0 },
-        { version: '4.36.135', releaseDate: '2024-11-03', securityFixes: 1 },
-        { version: '4.35.121', releaseDate: '2024-10-20', securityFixes: 2 }
+        { version: '4.36.140', releaseDate: '2025-11-10', securityFixes: 0 },
+        { version: '4.36.135', releaseDate: '2025-11-03', securityFixes: 1 },
+        { version: '4.35.121', releaseDate: '2025-10-20', securityFixes: 2 }
       ]
     },
     aiFeatures: {
@@ -205,7 +205,7 @@ const mockAssessments: Assessment[] = [
       dataHandlingSummary: 'Enterprise-grade data protection with encryption at rest and in transit. GDPR-compliant with EU data residency options.',
       dpa: true,
       sources: [
-        { id: 'comp1', type: 'compliance-cert', title: 'SOC 2 Report', verified: true, date: '2024-06' },
+        { id: 'comp1', type: 'compliance-cert', title: 'SOC 2 Report', verified: true, date: '2025-06' },
         { id: 'comp2', type: 'vendor-stated', title: 'Slack Trust Center', verified: true }
       ]
     },
@@ -236,7 +236,7 @@ const mockAssessments: Assessment[] = [
   },
   {
     id: 'github-001',
-    timestamp: '2024-11-13T15:20:00Z',
+    timestamp: '2025-11-13T15:20:00Z',
     cached: true,
     product: {
       name: 'GitHub',
@@ -261,7 +261,7 @@ const mockAssessments: Assessment[] = [
         score: 90,
         summary: 'Industry-leading developer platform with strong security culture. Acquired by Microsoft in 2018.',
         sources: [
-          { id: 'gh1', type: 'independent', title: 'Stack Overflow Survey 2024', verified: true }
+          { id: 'gh1', type: 'independent', title: 'Stack Overflow Survey 2025', verified: true }
         ]
       },
       securityTrackRecord: 'Excellent. Transparent about security with bug bounty program and public security advisories.',
@@ -318,18 +318,18 @@ const mockAssessments: Assessment[] = [
     vulnerabilities: {
       cveCount: 12,
       trendData: [
-        { month: '2024-01', count: 1 },
-        { month: '2024-02', count: 2 },
-        { month: '2024-03', count: 1 },
-        { month: '2024-04', count: 0 },
-        { month: '2024-05', count: 1 },
-        { month: '2024-06', count: 2 },
-        { month: '2024-07', count: 1 },
-        { month: '2024-08', count: 0 },
-        { month: '2024-09', count: 1 },
-        { month: '2024-10', count: 2 },
-        { month: '2024-11', count: 1 },
-        { month: '2024-12', count: 0 }
+        { month: '2025-01', count: 1 },
+        { month: '2025-02', count: 2 },
+        { month: '2025-03', count: 1 },
+        { month: '2025-04', count: 0 },
+        { month: '2025-05', count: 1 },
+        { month: '2025-06', count: 2 },
+        { month: '2025-07', count: 1 },
+        { month: '2025-08', count: 0 },
+        { month: '2025-09', count: 1 },
+        { month: '2025-10', count: 2 },
+        { month: '2025-11', count: 1 },
+        { month: '2025-12', count: 0 }
       ],
       severityBreakdown: {
         critical: 1,
@@ -339,11 +339,11 @@ const mockAssessments: Assessment[] = [
       },
       recentCVEs: [
         {
-          id: 'CVE-2024-34567',
+          id: 'CVE-2025-34567',
           cvss: 8.1,
           severity: 'High',
           description: 'Authentication bypass in GitHub Actions',
-          publishedDate: '2024-10-20',
+          publishedDate: '2025-10-20',
           patched: true
         }
       ],
@@ -424,7 +424,7 @@ const mockAssessments: Assessment[] = [
   },
   {
     id: 'zoom-001',
-    timestamp: '2024-11-12T09:15:00Z',
+    timestamp: '2025-11-12T09:15:00Z',
     cached: false,
     product: {
       name: 'Zoom',
@@ -502,7 +502,7 @@ const mockAssessments: Assessment[] = [
     },
     vulnerabilities: {
       cveCount: 15,
-      trendData: Array(12).fill(0).map((_, i) => ({ month: `2024-${String(i + 1).padStart(2, '0')}`, count: Math.floor(Math.random() * 3) })),
+      trendData: Array(12).fill(0).map((_, i) => ({ month: `2025-${String(i + 1).padStart(2, '0')}`, count: Math.floor(Math.random() * 3) })),
       severityBreakdown: {
         critical: 1,
         high: 4,
@@ -511,11 +511,11 @@ const mockAssessments: Assessment[] = [
       },
       recentCVEs: [
         {
-          id: 'CVE-2024-45678',
+          id: 'CVE-2025-45678',
           cvss: 7.5,
           severity: 'High',
           description: 'Authentication bypass in Zoom client',
-          publishedDate: '2024-09-15',
+          publishedDate: '2025-09-15',
           patched: true
         }
       ],
@@ -569,7 +569,7 @@ const mockAssessments: Assessment[] = [
   },
   {
     id: 'notion-001',
-    timestamp: '2024-11-10T14:30:00Z',
+    timestamp: '2025-11-10T14:30:00Z',
     cached: true,
     product: {
       name: 'Notion',
@@ -646,7 +646,7 @@ const mockAssessments: Assessment[] = [
     },
     vulnerabilities: {
       cveCount: 3,
-      trendData: Array(12).fill(0).map((_, i) => ({ month: `2024-${String(i + 1).padStart(2, '0')}`, count: i % 4 === 0 ? 1 : 0 })),
+      trendData: Array(12).fill(0).map((_, i) => ({ month: `2025-${String(i + 1).padStart(2, '0')}`, count: i % 4 === 0 ? 1 : 0 })),
       severityBreakdown: {
         critical: 0,
         high: 1,
@@ -694,7 +694,7 @@ const mockAssessments: Assessment[] = [
   },
   {
     id: 'vscode-001',
-    timestamp: '2024-11-08T11:00:00Z',
+    timestamp: '2025-11-08T11:00:00Z',
     cached: true,
     product: {
       name: 'Visual Studio Code',
@@ -771,7 +771,7 @@ const mockAssessments: Assessment[] = [
     },
     vulnerabilities: {
       cveCount: 8,
-      trendData: Array(12).fill(0).map((_, i) => ({ month: `2024-${String(i + 1).padStart(2, '0')}`, count: i % 3 === 0 ? 1 : 0 })),
+      trendData: Array(12).fill(0).map((_, i) => ({ month: `2025-${String(i + 1).padStart(2, '0')}`, count: i % 3 === 0 ? 1 : 0 })),
       severityBreakdown: {
         critical: 0,
         high: 2,
@@ -819,7 +819,7 @@ const mockAssessments: Assessment[] = [
   },
   {
     id: 'dropbox-001',
-    timestamp: '2024-11-07T16:45:00Z',
+    timestamp: '2025-11-07T16:45:00Z',
     cached: false,
     product: {
       name: 'Dropbox',
@@ -897,7 +897,7 @@ const mockAssessments: Assessment[] = [
     },
     vulnerabilities: {
       cveCount: 5,
-      trendData: Array(12).fill(0).map((_, i) => ({ month: `2024-${String(i + 1).padStart(2, '0')}`, count: i % 5 === 0 ? 1 : 0 })),
+      trendData: Array(12).fill(0).map((_, i) => ({ month: `2025-${String(i + 1).padStart(2, '0')}`, count: i % 5 === 0 ? 1 : 0 })),
       severityBreakdown: {
         critical: 0,
         high: 1,
@@ -955,7 +955,7 @@ const mockAssessments: Assessment[] = [
   },
   {
     id: 'figma-001',
-    timestamp: '2024-11-05T13:20:00Z',
+    timestamp: '2025-11-05T13:20:00Z',
     cached: false,
     product: {
       name: 'Figma',
@@ -1032,7 +1032,7 @@ const mockAssessments: Assessment[] = [
     },
     vulnerabilities: {
       cveCount: 4,
-      trendData: Array(12).fill(0).map((_, i) => ({ month: `2024-${String(i + 1).padStart(2, '0')}`, count: i % 6 === 0 ? 1 : 0 })),
+      trendData: Array(12).fill(0).map((_, i) => ({ month: `2025-${String(i + 1).padStart(2, '0')}`, count: i % 6 === 0 ? 1 : 0 })),
       severityBreakdown: {
         critical: 0,
         high: 1,

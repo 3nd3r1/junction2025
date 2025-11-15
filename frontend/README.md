@@ -1,4 +1,4 @@
-# Security Assessor Frontend
+# Tarkist.us Frontend
 
 A beautiful, comprehensive Security Assessment Platform that evaluates third-party software across 15 comprehensive dimensions.
 

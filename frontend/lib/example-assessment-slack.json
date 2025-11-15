@@ -1,6 +1,6 @@
 {
   "id": "slack-001",
-  "timestamp": "2024-11-14T10:30:00Z",
+  "timestamp": "2025-11-14T10:30:00Z",
   "cached": false,
   "product": {
     "name": "Slack",
@@ -30,7 +30,7 @@
           "type": "independent",
           "title": "Gartner Magic Quadrant",
           "verified": true,
-          "date": "2024-01"
+          "date": "2025-01"
         }
       ]
     },
@@ -147,18 +147,18 @@
   "vulnerabilities": {
     "cveCount": 8,
     "trendData": [
-      { "month": "2024-01", "count": 1 },
-      { "month": "2024-02", "count": 0 },
-      { "month": "2024-03", "count": 2 },
-      { "month": "2024-04", "count": 1 },
-      { "month": "2024-05", "count": 0 },
-      { "month": "2024-06", "count": 1 },
-      { "month": "2024-07", "count": 0 },
-      { "month": "2024-08", "count": 1 },
-      { "month": "2024-09", "count": 0 },
-      { "month": "2024-10", "count": 2 },
-      { "month": "2024-11", "count": 0 },
-      { "month": "2024-12", "count": 0 }
+      { "month": "2025-01", "count": 1 },
+      { "month": "2025-02", "count": 0 },
+      { "month": "2025-03", "count": 2 },
+      { "month": "2025-04", "count": 1 },
+      { "month": "2025-05", "count": 0 },
+      { "month": "2025-06", "count": 1 },
+      { "month": "2025-07", "count": 0 },
+      { "month": "2025-08", "count": 1 },
+      { "month": "2025-09", "count": 0 },
+      { "month": "2025-10", "count": 2 },
+      { "month": "2025-11", "count": 0 },
+      { "month": "2025-12", "count": 0 }
     ],
     "severityBreakdown": {
       "critical": 0,
@@ -168,19 +168,19 @@
     },
     "recentCVEs": [
       {
-        "id": "CVE-2024-23456",
+        "id": "CVE-2025-23456",
         "cvss": 7.1,
         "severity": "High",
         "description": "XSS vulnerability in message rendering",
-        "publishedDate": "2024-10-15",
+        "publishedDate": "2025-10-15",
         "patched": true
       },
       {
-        "id": "CVE-2024-12345",
+        "id": "CVE-2025-12345",
         "cvss": 5.3,
         "severity": "Medium",
         "description": "Information disclosure in API responses",
-        "publishedDate": "2024-10-01",
+        "publishedDate": "2025-10-01",
         "patched": true
       }
     ],
@@ -196,9 +196,9 @@
     ],
     "ltsVersions": ["4.x"],
     "versionHistory": [
-      { "version": "4.36.140", "releaseDate": "2024-11-10", "securityFixes": 0 },
-      { "version": "4.36.135", "releaseDate": "2024-11-03", "securityFixes": 1 },
-      { "version": "4.35.121", "releaseDate": "2024-10-20", "securityFixes": 2 }
+      { "version": "4.36.140", "releaseDate": "2025-11-10", "securityFixes": 0 },
+      { "version": "4.36.135", "releaseDate": "2025-11-03", "securityFixes": 1 },
+      { "version": "4.35.121", "releaseDate": "2025-10-20", "securityFixes": 2 }
     ]
   },
   "aiFeatures": {
@@ -274,7 +274,7 @@
         "type": "compliance-cert",
         "title": "SOC 2 Report",
         "verified": true,
-        "date": "2024-06"
+        "date": "2025-06"
       },
       {
         "id": "comp2",

@@ -77,7 +77,7 @@ export default function AboutPage() {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
               <Sparkles className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium">About Security Assessor</span>
+              <span className="text-sm font-medium">About Tarkist.us</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
@@ -107,7 +107,7 @@ export default function AboutPage() {
             <div className="text-center space-y-4">
               <h2 className="text-4xl font-bold">What We Do</h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Security Assessor evaluates third-party software across <span className="font-semibold text-primary">15 comprehensive dimensions</span>, 
+                Tarkist.us evaluates third-party software across <span className="font-semibold text-primary">15 comprehensive dimensions</span>, 
                 providing actionable insights for security teams, procurement, and IT leaders.
               </p>
             </div>

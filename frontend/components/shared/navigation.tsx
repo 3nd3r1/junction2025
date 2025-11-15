@@ -27,7 +27,7 @@ export function Navigation() {
           <div className="flex items-center gap-6">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl">
               <Shield className="h-6 w-6 text-primary" />
-              <span className="gradient-text">Security Assessor</span>
+              <span className="gradient-text">Tarkist.us</span>
             </Link>
           </div>
         </div>
@@ -43,7 +43,7 @@ export function Navigation() {
             <div className="flex items-center gap-6">
               <Link href="/" className="flex items-center gap-2 font-bold text-xl">
                 <Shield className="h-6 w-6 text-primary" />
-                <span className="gradient-text">Security Assessor</span>
+                <span className="gradient-text">Tarkist.us</span>
               </Link>
               
               <div className="hidden md:flex items-center gap-4">

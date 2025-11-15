@@ -1,5 +1,5 @@
 // ============================================================================
-// Security Assessor - Complete Type System
+// Tarkist.us - Complete Type System
 // Covers all 15 framework sections from IMPLEMENTATION_SUMMARY.md
 // ============================================================================
 

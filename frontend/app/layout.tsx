@@ -8,7 +8,7 @@ import { Navigation } from "@/components/shared/navigation";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Security Assessor - Comprehensive Third-Party Software Security Analysis",
+  title: "Tarkist.us - Comprehensive Third-Party Software Security Analysis",
   description: "Evaluate third-party software across 15 comprehensive security dimensions. Get actionable insights through beautiful, data-driven reports.",
 };
 

@@ -29,7 +29,7 @@ export function AssessmentComponentsDemo() {
   // This would come from your API in a real implementation
   const assessment = {
     id: 'demo-001',
-    timestamp: '2024-11-15T00:00:00Z',
+    timestamp: '2025-11-15T00:00:00Z',
     cached: false,
     trustScore: {
       score: 78,
@@ -93,9 +93,9 @@ export function AssessmentComponentsDemo() {
       eolDates: [{ version: '3.x', date: '2023-12-31' }],
       ltsVersions: ['4.x'],
       versionHistory: [
-        { version: '4.36.140', releaseDate: '2024-11-10', securityFixes: 0 },
-        { version: '4.36.135', releaseDate: '2024-11-03', securityFixes: 1 },
-        { version: '4.35.121', releaseDate: '2024-10-20', securityFixes: 2 },
+        { version: '4.36.140', releaseDate: '2025-11-10', securityFixes: 0 },
+        { version: '4.36.135', releaseDate: '2025-11-03', securityFixes: 1 },
+        { version: '4.35.121', releaseDate: '2025-10-20', securityFixes: 2 },
       ],
     },
     aiFeatures: {

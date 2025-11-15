@@ -24,7 +24,7 @@ const DEMO_USER: User = {
   email: 'demo@securityassessor.app',
   name: 'Alex Johnson',
   avatarColor: '#6366f1',
-  joinedDate: '2024-09-15T00:00:00Z',
+  joinedDate: '2025-09-15T00:00:00Z',
   plan: 'pro',
   preferences: {
     theme: 'system',

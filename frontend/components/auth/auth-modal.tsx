@@ -69,7 +69,7 @@ export function AuthModal({ open, onOpenChange, defaultMode = 'login' }: AuthMod
               <div className="space-y-2">
                 <div className="flex items-center gap-2 mb-4">
                   <Shield className="h-8 w-8 text-primary" />
-                  <span className="font-bold text-2xl gradient-text">Security Assessor</span>
+                  <span className="font-bold text-2xl gradient-text">Tarkist.us</span>
                 </div>
                 <h3 className="text-2xl font-bold">
                   {mode === 'login' ? 'Welcome back!' : 'Join thousands of security professionals'}
@@ -97,7 +97,7 @@ export function AuthModal({ open, onOpenChange, defaultMode = 'login' }: AuthMod
 
               <div className="pt-4 border-t">
                 <p className="text-sm text-muted-foreground italic">
-                  "Security Assessor has transformed how we evaluate third-party software. The depth of analysis is unmatched."
+                  "Tarkist.us has transformed how we evaluate third-party software. The depth of analysis is unmatched."
                 </p>
                 <p className="text-sm font-medium mt-2">— Sarah Chen, CISO</p>
               </div>

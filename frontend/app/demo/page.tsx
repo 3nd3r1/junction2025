@@ -31,18 +31,18 @@ const demoSecurityDimensions = [
 ];
 
 const demoCVETrend = [
-  { month: '2024-01', count: 2 },
-  { month: '2024-02', count: 1 },
-  { month: '2024-03', count: 3 },
-  { month: '2024-04', count: 2 },
-  { month: '2024-05', count: 1 },
-  { month: '2024-06', count: 2 },
-  { month: '2024-07', count: 1 },
-  { month: '2024-08', count: 0 },
-  { month: '2024-09', count: 2 },
-  { month: '2024-10', count: 3 },
-  { month: '2024-11', count: 1 },
-  { month: '2024-12', count: 0 },
+  { month: '2025-01', count: 2 },
+  { month: '2025-02', count: 1 },
+  { month: '2025-03', count: 3 },
+  { month: '2025-04', count: 2 },
+  { month: '2025-05', count: 1 },
+  { month: '2025-06', count: 2 },
+  { month: '2025-07', count: 1 },
+  { month: '2025-08', count: 0 },
+  { month: '2025-09', count: 2 },
+  { month: '2025-10', count: 3 },
+  { month: '2025-11', count: 1 },
+  { month: '2025-12', count: 0 },
 ];
 
 const demoSeverityBreakdown = {
@@ -54,19 +54,19 @@ const demoSeverityBreakdown = {
 
 const demoRecentCVEs = [
   {
-    id: 'CVE-2024-12345',
+    id: 'CVE-2025-12345',
     cvss: 7.5,
     severity: 'High',
     description: 'SQL injection vulnerability in admin panel',
-    publishedDate: '2024-10-15',
+    publishedDate: '2025-10-15',
     patched: true,
   },
   {
-    id: 'CVE-2024-12346',
+    id: 'CVE-2025-12346',
     cvss: 5.3,
     severity: 'Medium',
     description: 'Cross-site scripting in user profile',
-    publishedDate: '2024-09-20',
+    publishedDate: '2025-09-20',
     patched: true,
   },
 ];
@@ -148,7 +148,7 @@ const demoCitations = [
     title: 'Official Documentation',
     url: 'https://example.com/docs',
     verified: true,
-    date: '2024-01-15',
+    date: '2025-01-15',
   },
   {
     id: 'cite-2',
@@ -156,14 +156,14 @@ const demoCitations = [
     title: 'Third-party Security Audit',
     url: 'https://example.com/audit',
     verified: true,
-    date: '2024-02-20',
+    date: '2025-02-20',
   },
   {
     id: 'cite-3',
     type: 'compliance-cert' as const,
     title: 'SOC 2 Type II Report',
     verified: true,
-    date: '2024-03-10',
+    date: '2025-03-10',
   },
 ];
 

@@ -1,6 +1,6 @@
 # Assessment Components - Phase 4
 
-This directory contains all Phase 4 assessment components for the Security Assessor platform. These components provide comprehensive visualization of security assessments across 15 dimensions.
+This directory contains all Phase 4 assessment components for the Tarkist.us platform. These components provide comprehensive visualization of security assessments across 15 dimensions.
 
 ## 📦 Components
 
