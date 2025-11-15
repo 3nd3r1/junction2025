@@ -1,3 +1,3 @@
-# Team Hyperboli - Junction 2025
+# Tarkk.ai - Junction 2025
 
 What is that diddyblud doing on the calculator is blud Einstein?
