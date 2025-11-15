@@ -68,7 +68,9 @@ class AssessmentService:
 
         return Assessment.from_model(db_assessment)
 
-    async def update_assessment_status(self, assessment_id: UUID1, status: AssessmentStatus) -> bool:
+    async def update_assessment_status(
+        self, assessment_id: UUID1, status: AssessmentStatus
+    ) -> bool:
         """Update assessment status in database."""
         db = self._get_db()
 
