@@ -111,6 +111,7 @@ export function AIFeaturesBreakdown({ aiFeatures }: AIFeaturesBreakdownProps) {
         </div>
 
         {/* AI Features List */}
+        {aiFeatures.features && aiFeatures.features.length > 0 && (
         <div>
           <h5 className="font-semibold mb-3">AI Capabilities</h5>
           <div className="space-y-3">
@@ -138,6 +139,7 @@ export function AIFeaturesBreakdown({ aiFeatures }: AIFeaturesBreakdownProps) {
             ))}
           </div>
         </div>
+        )}
 
         {/* Privacy Warning */}
         {aiFeatures.dataUsedForTraining && !aiFeatures.canOptOut && (

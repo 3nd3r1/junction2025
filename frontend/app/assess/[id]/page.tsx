@@ -28,7 +28,7 @@ import { AIFeaturesBreakdown } from "@/components/assessment/ai-features-breakdo
 import { SourcesBreakdown } from "@/components/assessment/sources-breakdown";
 import { ReportSizeSelector } from "@/components/assessment/report-size-selector";
 import { DisclaimerBanner } from "@/components/assessment/disclaimer-banner";
-import { AlternativeCard } from "@/components/assessment/alternative-card";
+import { AlternativesList } from "@/components/assessment/alternative-card";
 
 export default function AssessmentPage() {
   const params = useParams();
@@ -104,16 +104,19 @@ export default function AssessmentPage() {
               </div>
             </div>
 
-            {/* Trust Score Circle */}
+            {/* Trust Score Circle - Compact Mode */}
             <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring", bounce: 0.5, delay: 0.2 }}
+              className="flex items-center"
             >
               <TrustScoreCircle 
                 score={assessment.trustScore.score} 
                 confidence={assessment.trustScore.confidence}
-                size="md"
+                rationale={assessment.trustScore.rationale}
+                size="sm"
+                compact
               />
             </motion.div>
           </div>
@@ -291,7 +294,7 @@ export default function AssessmentPage() {
                 </Card>
 
                 {/* Incidents Timeline */}
-                <IncidentTimeline incidents={assessment.incidents} />
+                <IncidentTimeline incidents={assessment.incidents.timeline} />
               </TabsContent>
 
               {/* Tab 3: Vulnerabilities - §8 CVE Analysis */}
@@ -441,7 +444,7 @@ export default function AssessmentPage() {
 
               {/* Tab 8: Alternatives - Recommendations */}
               <TabsContent value="alternatives" className="space-y-6">
-                <AlternativeCard 
+                <AlternativesList 
                   alternatives={assessment.alternatives} 
                   currentScore={assessment.trustScore.score}
                 />

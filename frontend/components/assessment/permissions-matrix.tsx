@@ -50,10 +50,10 @@ export function PermissionsMatrix({ permissions }: PermissionsMatrixProps) {
         <div>
           <h4 className="font-semibold mb-3 flex items-center gap-2">
             Required Permissions
-            <Badge variant="outline">{permissions.required.length}</Badge>
+            <Badge variant="outline">{permissions.required?.length || 0}</Badge>
           </h4>
           <div className="space-y-2">
-            {permissions.required.map((perm, index) => {
+            {permissions.required && permissions.required.map((perm, index) => {
               const colors = getRiskColor(perm.riskLevel);
               return (
                 <div
@@ -79,7 +79,7 @@ export function PermissionsMatrix({ permissions }: PermissionsMatrixProps) {
         </div>
 
         {/* Optional Permissions */}
-        {permissions.optional.length > 0 && (
+        {permissions.optional && permissions.optional.length > 0 && (
           <div>
             <h4 className="font-semibold mb-3 flex items-center gap-2">
               Optional Permissions

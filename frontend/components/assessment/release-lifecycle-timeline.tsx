@@ -56,7 +56,7 @@ export function ReleaseLifecycleTimeline({ releaseLifecycle }: ReleaseLifecycleT
         </div>
 
         {/* LTS Versions */}
-        {releaseLifecycle.ltsVersions.length > 0 && (
+        {releaseLifecycle.ltsVersions && releaseLifecycle.ltsVersions.length > 0 && (
           <div className="border rounded-lg p-4">
             <h5 className="font-semibold mb-2">Long-Term Support (LTS) Versions</h5>
             <div className="flex flex-wrap gap-2">
@@ -70,7 +70,7 @@ export function ReleaseLifecycleTimeline({ releaseLifecycle }: ReleaseLifecycleT
         )}
 
         {/* Version History */}
-        {releaseLifecycle.versionHistory.length > 0 && (
+        {releaseLifecycle.versionHistory && releaseLifecycle.versionHistory.length > 0 && (
           <div>
             <h5 className="font-semibold mb-3">Recent Releases</h5>
             <div className="space-y-2">
@@ -101,7 +101,7 @@ export function ReleaseLifecycleTimeline({ releaseLifecycle }: ReleaseLifecycleT
         )}
 
         {/* End of Life Dates */}
-        {releaseLifecycle.eolDates.length > 0 && (
+        {releaseLifecycle.eolDates && releaseLifecycle.eolDates.length > 0 && (
           <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-4">
             <div className="flex items-start gap-3">
               <AlertCircle className="h-5 w-5 text-orange-500 mt-0.5" />

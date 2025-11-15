@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Shield, ShieldAlert, ShieldCheck } from 'lucide-react';
+import { Shield, ShieldAlert, ShieldCheck, Info } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 
 interface TrustScoreCircleProps {
   score: number; // 0-100
@@ -11,6 +12,7 @@ interface TrustScoreCircleProps {
   rationale?: string;
   size?: 'sm' | 'md' | 'lg';
   animated?: boolean;
+  compact?: boolean; // New: for header/inline usage
 }
 
 export function TrustScoreCircle({
@@ -19,6 +21,7 @@ export function TrustScoreCircle({
   rationale,
   size = 'lg',
   animated = true,
+  compact = false,
 }: TrustScoreCircleProps) {
   const [displayScore, setDisplayScore] = useState(animated ? 0 : score);
 
@@ -26,7 +29,7 @@ export function TrustScoreCircle({
   useEffect(() => {
     if (!animated) return;
 
-    const duration = 2000; // 2 seconds
+    const duration = 1500; // 1.5 seconds for faster animation
     const steps = 60;
     const increment = score / steps;
     let current = 0;
@@ -71,11 +74,11 @@ export function TrustScoreCircle({
   const Icon = getScoreIcon(score);
   const label = getScoreLabel(score);
 
-  // Size configurations
+  // Size configurations - optimized for better space usage
   const sizeConfig = {
-    sm: { circle: 120, stroke: 8, text: 'text-2xl', icon: 16 },
-    md: { circle: 180, stroke: 12, text: 'text-4xl', icon: 24 },
-    lg: { circle: 240, stroke: 16, text: 'text-6xl', icon: 32 },
+    sm: { circle: 100, stroke: 6, text: 'text-xl', icon: 14, label: 'text-xs' },
+    md: { circle: 140, stroke: 10, text: 'text-3xl', icon: 20, label: 'text-sm' },
+    lg: { circle: 200, stroke: 14, text: 'text-5xl', icon: 28, label: 'text-base' },
   };
 
   const config = sizeConfig[size];
@@ -83,6 +86,97 @@ export function TrustScoreCircle({
   const circumference = 2 * Math.PI * radius;
   const offset = circumference - (displayScore / 100) * circumference;
 
+  // Compact mode: just the circle without card wrapper
+  if (compact) {
+    return (
+      <TooltipProvider>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <div className="relative inline-flex flex-col items-center gap-2">
+              {/* SVG Circle Progress */}
+              <svg
+                width={config.circle}
+                height={config.circle}
+                className="transform -rotate-90"
+              >
+                {/* Background circle */}
+                <circle
+                  cx={config.circle / 2}
+                  cy={config.circle / 2}
+                  r={radius}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={config.stroke}
+                  className="text-muted-foreground/20"
+                />
+                
+                {/* Progress circle */}
+                <motion.circle
+                  cx={config.circle / 2}
+                  cy={config.circle / 2}
+                  r={radius}
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth={config.stroke}
+                  strokeLinecap="round"
+                  className={colors.bg}
+                  strokeDasharray={circumference}
+                  initial={{ strokeDashoffset: circumference }}
+                  animate={{ strokeDashoffset: offset }}
+                  transition={{ duration: 1.5, ease: 'easeInOut' }}
+                />
+              </svg>
+
+              {/* Center content */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-0.5">
+                <motion.div
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.3, duration: 0.4, type: 'spring' }}
+                  className={colors.color}
+                >
+                  <Icon size={config.icon} strokeWidth={2.5} />
+                </motion.div>
+                
+                <motion.div
+                  className={`font-bold ${config.text} ${colors.color} leading-none`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  {displayScore}
+                </motion.div>
+                
+                <motion.div
+                  className={`${config.label} font-medium text-muted-foreground leading-tight mt-0.5`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  {label}
+                </motion.div>
+              </div>
+
+              {/* Compact info badge */}
+              <div className="flex items-center gap-1.5">
+                <span className={`text-xs font-semibold ${colors.color}`}>Trust Score</span>
+                {confidence < 100 && (
+                  <span className="text-xs text-muted-foreground">({confidence}% confidence)</span>
+                )}
+              </div>
+            </div>
+          </TooltipTrigger>
+          {rationale && (
+            <TooltipContent className="max-w-sm">
+              <p>{rationale}</p>
+            </TooltipContent>
+          )}
+        </Tooltip>
+      </TooltipProvider>
+    );
+  }
+
+  // Full card mode with all details
   return (
     <Card className="p-6 flex flex-col items-center gap-4">
       <div className="relative">
@@ -116,35 +210,35 @@ export function TrustScoreCircle({
             strokeDasharray={circumference}
             initial={{ strokeDashoffset: circumference }}
             animate={{ strokeDashoffset: offset }}
-            transition={{ duration: 2, ease: 'easeInOut' }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
           />
         </svg>
 
         {/* Center content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-1">
           <motion.div
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.5, type: 'spring' }}
-            className={`${colors.color} mb-2`}
+            transition={{ delay: 0.3, duration: 0.4, type: 'spring' }}
+            className={colors.color}
           >
             <Icon size={config.icon} strokeWidth={2.5} />
           </motion.div>
           
           <motion.div
-            className={`font-bold ${config.text} ${colors.color}`}
+            className={`font-bold ${config.text} ${colors.color} leading-none`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.2 }}
           >
             {displayScore}
           </motion.div>
           
           <motion.div
-            className="text-sm font-medium text-muted-foreground"
+            className={`${config.label} font-medium text-muted-foreground leading-tight`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.7 }}
+            transition={{ delay: 0.5 }}
           >
             {label}
           </motion.div>
@@ -156,11 +250,9 @@ export function TrustScoreCircle({
         <h3 className="text-lg font-semibold">Trust Score</h3>
         
         {confidence < 100 && (
-          <div className="flex items-center gap-2 text-sm text-muted-foreground">
-            <div className="flex items-center gap-1">
-              <span>Confidence:</span>
-              <span className="font-medium">{confidence}%</span>
-            </div>
+          <div className="flex items-center gap-2 text-sm text-muted-foreground justify-center">
+            <Info className="h-3 w-3" />
+            <span>Confidence: {confidence}%</span>
           </div>
         )}
 
@@ -172,8 +264,8 @@ export function TrustScoreCircle({
       </div>
 
       {/* Score breakdown indicator */}
-      <div className="w-full">
-        <div className="flex justify-between text-xs text-muted-foreground mb-1">
+      <div className="w-full max-w-md">
+        <div className="flex justify-between text-xs text-muted-foreground mb-1.5">
           <span>Critical</span>
           <span>Poor</span>
           <span>Fair</span>
@@ -185,11 +277,11 @@ export function TrustScoreCircle({
             className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-white border-2 border-foreground rounded-full shadow-lg"
             initial={{ left: '0%' }}
             animate={{ left: `${displayScore}%` }}
-            transition={{ duration: 2, ease: 'easeInOut' }}
+            transition={{ duration: 1.5, ease: 'easeInOut' }}
             style={{ marginLeft: '-6px' }}
           />
         </div>
-        <div className="flex justify-between text-xs text-muted-foreground mt-1">
+        <div className="flex justify-between text-xs text-muted-foreground mt-1.5">
           <span>0</span>
           <span>25</span>
           <span>50</span>
