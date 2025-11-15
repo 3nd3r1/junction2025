@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { Moon, Sun, Shield, GitCompare, DollarSign } from "lucide-react";
+import { Moon, Sun, Shield, GitCompare, DollarSign, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 
