@@ -1,1 +1,22 @@
-Research vendor information for the given application.
+Please research and provide comprehensive vendor information for the following entity:
+
+**Entity Details:**
+- Name: {{ entity.name }}
+- Vendor: {{ entity.vendor.name }}
+- Category: {{ entity.category }}
+- Description: {{ entity.description }}
+- Website: {{ entity.website }}
+- Vendor Website: {{ entity.vendor.website }}
+
+Based on this entity information, research the vendor company and provide detailed information following the schema. Focus on:
+
+1. **Company Background**: Official name, headquarters location, founding year, key leadership
+2. **Business Information**: Company size, employee count, revenue range, industry focus
+3. **Security Posture**: Certifications, compliance standards, security policies
+4. **Corporate Structure**: Parent company relationships, subsidiaries, ownership
+5. **Risk Factors**: Any known security incidents, regulatory issues, or compliance violations
+6. **Data Handling**: Where data is processed, stored, and transmitted
+
+Please provide accurate information based on publicly available sources. If specific information is not available, use null values rather than estimates.
+
+Return a JSON object following the provided schema.
