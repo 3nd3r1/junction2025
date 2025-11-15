@@ -36,7 +36,7 @@ class BaseAgent(Generic[TInput, TOutput]):
         # Render prompts with input data and output schema
         template_context = {
             **input_data.model_dump(),
-            "output_schema": self.output_model.model_json_schema()
+            "output_schema": self.output_model.model_json_schema(),
         }
         system_prompt = system_template.render(**template_context)
         user_prompt = user_template.render(**template_context)
