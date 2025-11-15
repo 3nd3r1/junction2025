@@ -41,7 +41,7 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-4">
             <Link href="/history" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <History className="h-4 w-4" />
-              <span>History</span>
+              <span>Applications</span>
             </Link>
             <Link href="/compare" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <GitCompare className="h-4 w-4" />
