@@ -30,6 +30,8 @@ import { SourcesBreakdown } from "@/components/assessment/sources-breakdown";
 import { ReportSizeSelector } from "@/components/assessment/report-size-selector";
 import { DisclaimerBanner } from "@/components/assessment/disclaimer-banner";
 import { AlternativesList } from "@/components/assessment/alternative-card";
+import { AdminControlsGrid } from "@/components/assessment/admin-controls-grid";
+import { SecurityScoreBreakdown } from "@/components/assessment/security-score-breakdown";
 
 export default function AssessmentPage() {
   const params = useParams();
@@ -155,7 +157,7 @@ export default function AssessmentPage() {
             <div className="flex flex-col lg:flex-row gap-4">
               <div className="flex-1">
                 <ReportSizeSelector 
-                  currentSize={reportSize} 
+                  selectedSize={reportSize} 
                   onSizeChange={setReportSize} 
                 />
               </div>
@@ -315,45 +317,22 @@ export default function AssessmentPage() {
 
               {/* Tab 2: Security Posture - §4 Admin Controls, §11 Incidents */}
               <TabsContent value="security" className="space-y-6">
+                {/* Security Score Breakdown */}
+                {shouldShowSection('security', reportSize) && (
+                  <SecurityScoreBreakdown 
+                    trustScore={assessment.trustScore.score}
+                    confidence={assessment.trustScore.confidence}
+                  />
+                )}
+
                 {/* Security Radar Chart */}
                 <SecurityRadarChart />
 
                 {/* Admin Controls */}
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Admin Controls & Access Management</CardTitle>
-                    <CardDescription>Available security features for administrators</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                      {Object.entries(assessment.adminControls).map(([key, value]) => {
-                        const enabled = value as boolean;
-                        return (
-                          <div 
-                            key={key} 
-                            className={`border rounded-lg p-4 ${
-                              enabled 
-                                ? 'bg-green-500/10 border-green-500/20' 
-                                : 'bg-red-500/10 border-red-500/20'
-                            }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <div className={`h-3 w-3 rounded-full ${
-                                enabled ? 'bg-green-500' : 'bg-red-500'
-                              }`} />
-                              <span className="font-medium capitalize">
-                                {key.replace(/([A-Z])/g, ' $1').trim()}
-                              </span>
-                            </div>
-                            <p className="text-xs text-muted-foreground mt-1">
-                              {enabled ? 'Available' : 'Not Available'}
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </CardContent>
-                </Card>
+                <AdminControlsGrid 
+                  adminControls={assessment.adminControls}
+                  reportSize={reportSize === 'enterprise' ? 'full' : reportSize}
+                />
 
                 {/* Incidents Timeline */}
                 {shouldShowSection('security', reportSize) && (
