@@ -43,6 +43,9 @@ export function Navigation() {
               <GitCompare className="h-4 w-4" />
               <span>Compare</span>
             </Link>
+            <Link href="/about" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <Info className="h-4 w-4" />
+              <span>About</span>
             <Link href="/pricing" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors">
               <DollarSign className="h-4 w-4" />
               <span>Pricing</span>
