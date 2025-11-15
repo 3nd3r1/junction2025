@@ -33,9 +33,13 @@ class BaseAgent(Generic[TInput, TOutput]):
         system_template = self._load_template("prompts/system.j2")
         user_template = self._load_template("prompts/user.j2")
 
-        # Render prompts with input data
-        system_prompt = system_template.render(**input_data.model_dump())
-        user_prompt = user_template.render(**input_data.model_dump())
+        # Render prompts with input data and output schema
+        template_context = {
+            **input_data.model_dump(),
+            "output_schema": self.output_model.model_json_schema()
+        }
+        system_prompt = system_template.render(**template_context)
+        user_prompt = user_template.render(**template_context)
 
         # Prepare messages for LLM
         messages = [
@@ -43,12 +47,9 @@ class BaseAgent(Generic[TInput, TOutput]):
             {"role": "user", "content": user_prompt},
         ]
 
-        # Generate response (LLM provider handles its own configuration)
         response = await self.llm_provider.generate(messages)
 
-        # Parse and validate response
         try:
-            # Extract JSON from markdown code blocks if present
             json_content = self._extract_json_from_response(response)
             return self.output_model.model_validate_json(json_content)
         except Exception as e:
