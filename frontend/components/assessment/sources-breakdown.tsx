@@ -7,7 +7,7 @@ import { FileText, Globe, Lock, Shield, TrendingUp, ExternalLink } from 'lucide-
 
 interface SourcesBreakdownProps {
   sources: Assessment['sources'];
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 export function SourcesBreakdown({ sources, reportSize = 'medium' }: SourcesBreakdownProps) {

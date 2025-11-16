@@ -18,7 +18,7 @@ interface PermissionsMatrixProps {
     }>;
     overPermissioningRisk?: string;
   };
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 const riskLevelConfig = {

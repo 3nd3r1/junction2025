@@ -7,7 +7,7 @@ import { Shield, CheckCircle, XCircle, Key, Users, FileText, Download, Activity 
 
 interface AdminControlsGridProps {
   adminControls: Assessment['adminControls'];
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 const controlsConfig = {

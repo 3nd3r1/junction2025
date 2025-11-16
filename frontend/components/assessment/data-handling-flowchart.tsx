@@ -7,7 +7,7 @@ import { Database, ArrowRight, Cloud, Users, Shield, Lock, Unlock, AlertTriangle
 
 interface DataHandlingFlowchartProps {
   dataHandling: Assessment['dataHandling'];
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 export function DataHandlingFlowchart({ dataHandling, reportSize = 'medium' }: DataHandlingFlowchartProps) {

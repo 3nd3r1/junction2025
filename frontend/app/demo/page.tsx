@@ -248,7 +248,7 @@ export default function DemoPage() {
             Comprehensive overview of enterprise security controls and administrative features
           </p>
         </div>
-        <AdminControlsGrid controls={demoAdminControls} />
+        <AdminControlsGrid adminControls={demoAdminControls} />
       </section>
 
       <Separator />

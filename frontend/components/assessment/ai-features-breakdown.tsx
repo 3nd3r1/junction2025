@@ -7,7 +7,7 @@ import { Brain, Sparkles, Database, MapPin, AlertCircle, CheckCircle, XCircle, E
 
 interface AIFeaturesBreakdownProps {
   aiFeatures: Assessment['aiFeatures'];
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 export function AIFeaturesBreakdown({ aiFeatures, reportSize = 'medium' }: AIFeaturesBreakdownProps) {

@@ -8,7 +8,7 @@ import { formatDate } from '@/lib/utils';
 
 interface ReleaseLifecycleTimelineProps {
   releaseLifecycle: Assessment['releaseLifecycle'];
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 export function ReleaseLifecycleTimeline({ releaseLifecycle, reportSize = 'medium' }: ReleaseLifecycleTimelineProps) {

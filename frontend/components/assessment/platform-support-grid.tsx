@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 
 interface PlatformSupportGridProps {
   platformSupport: Assessment['platformSupport'];
-  reportSize?: 'small' | 'medium' | 'full';
+  reportSize?: 'small' | 'medium' | 'full' | 'enterprise';
 }
 
 const platformIcons = {

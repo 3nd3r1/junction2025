@@ -36,7 +36,7 @@ export function UserMenu() {
   };
 
   const currentPlan = planBadge[user.plan];
-  const PlanIcon = currentPlan.icon;
+  const PlanIcon = 'icon' in currentPlan ? currentPlan.icon : null;
 
   return (
     <DropdownMenu>
