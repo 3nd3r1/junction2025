@@ -1,9 +1,9 @@
 <div align="center">
 <img src="docs/assets/logo.png" alt="Tarkist.us Logo" width="120" height="120" />
 
-# Tarkist.us - Know before you approve
+# Tarkist.us
 
-### _Comprehensive Security Assessment Platform_
+### _Know before you approve_
 
 **Transform application names into CISO-ready trust briefs in minutes**
 
@@ -30,6 +30,10 @@ Security teams are constantly asked to approve new tools they've never seen befo
 - ✅ Safer alternatives when available
 
 **Tarkist.us delivers all of this and more.**
+
+## Quick links
+
+- [Our Pitch Deck](docs/assets/tarkistus-pitch.pdf)
 
 ## ✨ Key Features
 
