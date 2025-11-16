@@ -198,9 +198,9 @@ function mapApiAssessmentToFrontend(apiAssessment: ApiAssessment): Assessment {
       logo: entity?.logo_url || vendor?.logo_url || undefined,
     },
     trustScore: {
-      score: apiAssessment.trust_score?.score || 0,
-      rationale: apiAssessment.trust_score?.rationale || 'Assessment in progress',
-      confidence: apiAssessment.trust_score?.confidence || 0,
+      score: apiAssessment.trust_score?.overall_score || 0,
+      rationale: apiAssessment.trust_score?.summary || 'Assessment in progress',
+      confidence: apiAssessment.trust_score?.confidence_score || 0,
     },
     vendorInfo: {
       companyName: vendor?.name || vendorName,
@@ -258,15 +258,15 @@ function mapApiAssessmentToFrontend(apiAssessment: ApiAssessment): Assessment {
       dataExport: apiAssessment.admin_controls?.data_export || false,
     },
     vulnerabilities: {
-      cveCount: apiAssessment.vulnerabilities?.cve_count || 0,
-      trendData: apiAssessment.vulnerabilities?.trend_data || [],
+      cveCount: apiAssessment.cve_analysis?.total_cves || 0,
+      trendData: apiAssessment.cve_analysis?.trend_data || [],
       severityBreakdown: {
-        critical: apiAssessment.vulnerabilities?.severity_breakdown?.critical || 0,
-        high: apiAssessment.vulnerabilities?.severity_breakdown?.high || 0,
-        medium: apiAssessment.vulnerabilities?.severity_breakdown?.medium || 0,
-        low: apiAssessment.vulnerabilities?.severity_breakdown?.low || 0,
+        critical: apiAssessment.cve_analysis?.severity_breakdown?.critical || 0,
+        high: apiAssessment.cve_analysis?.severity_breakdown?.high || 0,
+        medium: apiAssessment.cve_analysis?.severity_breakdown?.medium || 0,
+        low: apiAssessment.cve_analysis?.severity_breakdown?.low || 0,
       },
-      recentCVEs: apiAssessment.vulnerabilities?.recent_cves || [],
+      recentCVEs: apiAssessment.cve_analysis?.cves || [],
       cisaKEV: apiAssessment.vulnerabilities?.cisa_kev || false,
     },
     releaseLifecycle: {
