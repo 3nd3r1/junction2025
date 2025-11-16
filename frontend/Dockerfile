@@ -48,19 +48,9 @@ ENV NODE_ENV=production
 ENV NEXT_TELEMETRY_DISABLED=1
 
 # Create a simple health check script
-RUN echo 'const http = require("http"); \
-const options = { hostname: "localhost", port: 3000, path: "/", timeout: 2000 }; \
-const req = http.request(options, (res) => process.exit(res.statusCode === 200 ? 0 : 1)); \
-req.on("error", () => process.exit(1)); \
-req.end();' > healthcheck.js
-
-# Copy built application  
 COPY --from=builder /app/public ./public
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
-
-# Set ownership of health check script
-RUN chown nextjs:nodejs healthcheck.js
 
 # Switch to non-root user
 USER nextjs
@@ -71,10 +61,6 @@ EXPOSE 3000
 # Set environment variable for port
 ENV PORT=3000
 ENV HOSTNAME="0.0.0.0"
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD node healthcheck.js || exit 1
 
 # Start the application
 CMD ["node", "server.js"]
